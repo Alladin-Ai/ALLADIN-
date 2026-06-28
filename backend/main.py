@@ -1,3 +1,11 @@
-print("🚀 ALADDIN AI Started")
-print("Welcome to ALADDIN AI")
-print("Gold Trading Assistant Loading...")
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {
+        "name": "ALADDIN AI",
+        "market": "XAUUSD",
+        "status": "Running"
+    }
